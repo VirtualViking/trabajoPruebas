@@ -1,0 +1,17 @@
+{
+  "name": "inventory-system",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de inventario de productos",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "test": "cd backend && npm test",
+    "test:unit": "cd backend && npm run test:unit",
+    "test:integration": "cd backend && npm run test:integration",
+    "test:e2e": "cd backend && npm run test:e2e",
+    "install:all": "npm install && cd backend && npm install"
+  },
+  "keywords": ["inventory", "express", "postgres", "api"],
+  "author": "",
+  "license": "ISC"
+}
