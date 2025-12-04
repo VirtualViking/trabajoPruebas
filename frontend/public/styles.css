@@ -21,7 +21,7 @@ header {
   text-align: center;
   margin-bottom: 30px;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   border-radius: 10px;
   color: white;
 }
@@ -40,9 +40,9 @@ header h1 {
 
 .section h2 {
   margin-bottom: 15px;
-  color: #667eea;
+  color: black;
   font-size: 1.3rem;
-  border-bottom: 2px solid #667eea;
+  border-bottom: 2px solid black  ;
   padding-bottom: 8px;
 }
 
@@ -77,7 +77,7 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: black;
 }
 
 textarea {
@@ -96,7 +96,7 @@ button {
 }
 
 button[type="submit"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   color: white;
 }
 
@@ -122,7 +122,7 @@ button[type="submit"]:hover {
 }
 
 .btn-edit:hover {
-  background: #218838;
+  background: black;
 }
 
 .btn-delete {
@@ -132,7 +132,7 @@ button[type="submit"]:hover {
 }
 
 .btn-delete:hover {
-  background: #c82333;
+  background: black;
 }
 
 /* Lista de categorías */
@@ -169,7 +169,7 @@ table {
 }
 
 thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #c7ea66 0%, #4b8ea2 100%);
   color: white;
 }
 
@@ -214,7 +214,7 @@ tbody tr:nth-child(even) {
 }
 
 .notification.error {
-  background: #dc3545;
+  background: black;
 }
 
 /* Responsive */
