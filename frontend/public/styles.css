@@ -214,7 +214,7 @@ tbody tr:nth-child(even) {
 }
 
 .notification.error {
-  background: black;
+  background: red;
 }
 
 /* Responsive */
