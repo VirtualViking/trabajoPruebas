@@ -14,7 +14,9 @@ Ejecución de Pruebas
 Pipeline de Integración Continua
 Decisiones Técnicas
 
+
 1. Descripción del Proyecto
+   
 Este sistema permite gestionar un inventario de productos organizados por categorías. Las funcionalidades principales permiten:
 
 Gestión de Categorías: Crear, listar, actualizar y eliminar categorías de productos.
@@ -26,6 +28,7 @@ CI/CD: Pipeline automatizado en GitHub Actions.
 
 
 2. Arquitectura del Sistema
+   
 El proyecto sigue una arquitectura por capas que separa las responsabilidades en diferentes niveles:
 
 
@@ -63,10 +66,13 @@ El proyecto sigue una arquitectura por capas que separa las responsabilidades en
                     (Base de Datos)                        
 
 
-3. Base de Datos
+
+4. Base de Datos
 Motor de Base de Datos: Se utiliza PostgreSQL como sistema de gestión de base de datos relacional por su robustez, soporte para transacciones ACID
 
-4. Instalación y Configuración
+
+
+5. Instalación y Configuración
 Prerrequisitos
 
 Node.js v18 o +
@@ -74,19 +80,23 @@ npm v9 o +
 PostgreSQL v15 o +
 Git
 
+
 Para clonar el repositorio
 
 Paso 1: git clone https://github.com/VirtualViking/trabajoPruebas.git
 tener una carpeta abierta en el IDE y clonar desde alli
 
+
 Paso 2: Instalar dependencias
 
 npm install
+
 
 Paso 3: Crear la Base de Datos
 
 Abrir PostgreSQL (pgAdmin) y crear la base de datos:
 CREATE DATABASE inventory_db;
+
 
 Paso 4: Configurar Variables de Entorno
 Crear el archivo .env dentro de la carpeta backend del repo:
@@ -130,34 +140,49 @@ json{
 Endpoints disponinles
 
 GET/api/categories Listar todas las categorías
+
 GET/api/categories/:id obtener categoría por ID
+
 POST/api/categories Crear nueva categoría
+
 PUT/api/categories/:id Actualizar categoría
+
 DELETE/api/categories/:idEliminar categoría
 
 GET/api/products Listar todos los productos
+
 GET/api/products/:id Obtener producto por ID 
+
 GET/api/products/category/:categoryId Productos por categoría
+
 POST/api/products Crear nuevo producto 
+
 PUT/api/products/:id Actualizar producto 
+
 PATCH/api/products/:id/stock Actualizar stock 
+
 DELETE/api/products/:id Eliminar producto
 
 
 6. Ejecución de la Interfaz Gráfica
 La interfaz gráfica se sirve automáticamente cuando la API está corriendo.
 
+
 Asegurarse de que la API esté corriendo (npm run dev desde backend).
 Abrir el navegador en: http://localhost:3000
 
+
 Funcionalidades de la Interfaz
 
+
 Sección de Categorías:
+
 
 Crear nuevas categorías
 Ver lista de categorías existentes
 Editar categorías (botón Editar)
 Eliminar categorías (botón Eliminar)
+
 
 
 Sección de Productos:
@@ -168,24 +193,30 @@ Editar productos existentes
 Eliminar productos
 
 
+
 Notificaciones:
 
 Mensajes de éxito (verde) al completar operaciones
 Mensajes de error (rojo) cuando hay problemas
 
+
 7. Ejecución de Pruebas
+   
 
 El proyecto incluye dos tipos de pruebas automatizadas:
+
 
 Pruebas Unitarias
 Validan la lógica de negocio de los servicios de manera aislada usando mocks.
 Ejecutar desde la carpeta backend:
 npm run test:unit
 
+
 Pruebas de Integración
 Validan el comportamiento de la API junto con la base de datos real.
 Ejecutar desde la carpeta backend:
 bashnpm run test:integration
+
 
 
 8. Pipeline de Integración Continua
@@ -204,6 +235,7 @@ Jobs del Pipeline
                      ▼
             
             pipeline-success  ─── Imprime "OK" si pasan
+   
 
 Descripcion del workflow
 
@@ -214,6 +246,7 @@ integration-tests:
 Levanta un contenedor PostgreSQL como servicio
 Configura las variables de entorno
 Ejecuta las pruebas de integración
+
 
 
 9. Decisiones Técnicas
@@ -229,6 +262,7 @@ del sistema (Node.js, Express, PostgreSQL) sin la capa de abstracción que agreg
 Recursos del Sistema: Docker puede consumir recursos significativos en máquinas con hardware limitado.
 
 Depuración sencilla: Sin contenedores, es más fácil depurar problemas de conexión a la base de datos, permisos de archivos y configuración del entorno.
+
 
 
 Licencia
