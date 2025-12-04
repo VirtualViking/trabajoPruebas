@@ -2,6 +2,7 @@ Sistema de Gestión de Inventario
 Sistema completo para la gestión de inventario de productos desarrollado con:
 Node.js, Express.js y PostgreSQL. Incluye API REST, interfaz gráfica web y set completa de pruebas automatizadas con integración continua.
 
+
 Tabla de Contenidos
 
 Descripción del Proyecto
@@ -15,6 +16,7 @@ Pipeline de Integración Continua
 Decisiones Técnicas
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 1. Descripción del Proyecto
    
 Este sistema permite gestionar un inventario de productos organizados por categorías. Las funcionalidades principales permiten:
@@ -26,6 +28,8 @@ Interfaz Web: Aplicación frontend simple para interactuar con el sistema.
 Pruebas Automatizadas: set de pruebas unitarias y de integración.
 CI/CD: Pipeline automatizado en GitHub Actions.
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 2. Arquitectura del Sistema
    
@@ -67,9 +71,14 @@ El proyecto sigue una arquitectura por capas que separa las responsabilidades en
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 4. Base de Datos
 Motor de Base de Datos: Se utiliza PostgreSQL como sistema de gestión de base de datos relacional por su robustez, soporte para transacciones ACID
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 5. Instalación y Configuración
@@ -81,25 +90,29 @@ PostgreSQL v15 o +
 Git
 
 
+
 Para clonar el repositorio
 
 Paso 1: git clone https://github.com/VirtualViking/trabajoPruebas.git
 tener una carpeta abierta en el IDE y clonar desde alli
 
 
-Paso 2: Instalar dependencias
 
+Paso 2: Instalar dependencias
 npm install
 
 
-Paso 3: Crear la Base de Datos
 
+Paso 3: Crear la Base de Datos
 Abrir PostgreSQL (pgAdmin) y crear la base de datos:
 CREATE DATABASE inventory_db;
 
 
+
 Paso 4: Configurar Variables de Entorno
 Crear el archivo .env dentro de la carpeta backend del repo:
+
+
 
 Editar el archivo .env con la configuración de su base de datos:
 envDB_HOST=localhost
@@ -109,6 +122,8 @@ DB_USER=postgres
 DB_PASSWORD=su_contraseña_de_postgresql
 PORT=3000
 NODE_ENV=development
+
+
 
 Paso 5: Inicializar las Tablas
 Ejecutar el script (desde la carpeta backend en la terminal del IDE):
@@ -120,6 +135,8 @@ Connected to PostgreSQL database
 Tables created successfully
 Database initialization complete
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 5.Ejecución de la API
 
@@ -141,27 +158,40 @@ Endpoints disponinles
 
 GET/api/categories Listar todas las categorías
 
+
 GET/api/categories/:id obtener categoría por ID
 
 POST/api/categories Crear nueva categoría
 
+
 PUT/api/categories/:id Actualizar categoría
+
 
 DELETE/api/categories/:idEliminar categoría
 
+
 GET/api/products Listar todos los productos
+
 
 GET/api/products/:id Obtener producto por ID 
 
+
 GET/api/products/category/:categoryId Productos por categoría
+
 
 POST/api/products Crear nuevo producto 
 
+
 PUT/api/products/:id Actualizar producto 
+
 
 PATCH/api/products/:id/stock Actualizar stock 
 
+
 DELETE/api/products/:id Eliminar producto
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 6. Ejecución de la Interfaz Gráfica
@@ -185,6 +215,7 @@ Eliminar categorías (botón Eliminar)
 
 
 
+
 Sección de Productos:
 
 Crear nuevos productos con nombre, descripción, precio, stock y categoría
@@ -194,10 +225,15 @@ Eliminar productos
 
 
 
+
 Notificaciones:
 
 Mensajes de éxito (verde) al completar operaciones
 Mensajes de error (rojo) cuando hay problemas
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 7. Ejecución de Pruebas
@@ -209,17 +245,23 @@ El proyecto incluye dos tipos de pruebas automatizadas:
 Pruebas Unitarias
 Validan la lógica de negocio de los servicios de manera aislada usando mocks.
 Ejecutar desde la carpeta backend:
+
 npm run test:unit
 
 
 Pruebas de Integración
 Validan el comportamiento de la API junto con la base de datos real.
 Ejecutar desde la carpeta backend:
-bashnpm run test:integration
+
+npm run test:integration
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 8. Pipeline de Integración Continua
+   
 El proyecto utiliza GitHub Actions para ejecutar automáticamente las pruebas en cada push o pull request.
 Archivo de Configuración
 .github/workflows/ci.yml
@@ -230,11 +272,18 @@ Jobs del Pipeline
 
        │
        ▼
+
+
    unit-tests  │ integration-tests    ─── Se ejecutan en paralelo
+
+
                      │
                      ▼
             
-            pipeline-success  ─── Imprime "OK" si pasan
+
+    pipeline-success  ─── Imprime "OK" si pasan
+
+   
    
 
 Descripcion del workflow
@@ -246,6 +295,9 @@ integration-tests:
 Levanta un contenedor PostgreSQL como servicio
 Configura las variables de entorno
 Ejecuta las pruebas de integración
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -264,6 +316,10 @@ Recursos del Sistema: Docker puede consumir recursos significativos en máquinas
 Depuración sencilla: Sin contenedores, es más fácil depurar problemas de conexión a la base de datos, permisos de archivos y configuración del entorno.
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Licencia
+
+
 Este proyecto es de uso académico.
